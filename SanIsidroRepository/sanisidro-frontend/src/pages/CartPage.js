@@ -89,7 +89,7 @@ const CartPage = () => {
 
     try {
       // Obtener promoción del backend por código
-      const response = await fetch(`http://localhost:8080/api/promociones/codigo/${promoCode.toUpperCase()}`);
+      const response = await fetch(`https://backend-production-cbbe.up.railway.app/api/promociones/codigo/${promoCode.toUpperCase()}`);
       
       if (!response.ok) {
         setPromoError('Código inválido');

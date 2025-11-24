@@ -191,7 +191,7 @@ const MigrationPage = () => {
           <ul>
             <li>Esta migración NO eliminará los datos de localStorage</li>
             <li>Los datos se copiarán a la base de datos MySQL</li>
-            <li>Asegúrate de que el backend esté corriendo en http://localhost:8080</li>
+            <li>Asegúrate de que el backend esté corriendo en https://backend-production-cbbe.up.railway.app</li>
             <li>Los usuarios migrados tendrán contraseña por defecto: "password123"</li>
           </ul>
         </div>

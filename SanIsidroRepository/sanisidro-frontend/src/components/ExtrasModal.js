@@ -11,7 +11,7 @@ const ExtrasModal = ({ isOpen, onClose, onAddExtra }) => {
   useEffect(() => {
     if (isOpen) {
       // Cargar productos desde el backend
-      fetch('http://localhost:8080/api/productos')
+      fetch('https://backend-production-cbbe.up.railway.app/api/productos')
         .then(response => response.json())
         .then(products => {
           // Filtrar por categoría y disponibilidad
