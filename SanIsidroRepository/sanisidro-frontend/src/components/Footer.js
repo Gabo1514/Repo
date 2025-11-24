@@ -22,19 +22,19 @@ const Footer = () => {
             </div>
             
             <div className="social-links">
-              <a href="#" className="social-link">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="social-link">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="social-link">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link">
                 <i className="fab fa-youtube"></i>
               </a>
-              <a href="#" className="social-link">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="social-link">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>

@@ -9,10 +9,11 @@ const ReservationHistoryPage = () => {
   const navigate = useNavigate();
   const [reservations, setReservations] = useState([]);
   const [filter, setFilter] = useState('todas');
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
 
   useEffect(() => {
     cargarReservas();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate]);
 
   const cargarReservas = async () => {

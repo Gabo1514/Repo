@@ -6,7 +6,7 @@ import './AdminPromotions.css';
 const AdminPromotions = () => {
   const navigate = useNavigate();
   const [promotions, setPromotions] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [editingPromotion, setEditingPromotion] = useState(null);
   const [formData, setFormData] = useState({

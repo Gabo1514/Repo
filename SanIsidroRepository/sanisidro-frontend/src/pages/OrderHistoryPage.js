@@ -16,6 +16,7 @@ const OrderHistoryPage = () => {
 
   useEffect(() => {
     cargarPedidos();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const cargarPedidos = async () => {
