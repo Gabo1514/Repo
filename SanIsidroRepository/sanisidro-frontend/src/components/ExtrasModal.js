@@ -10,44 +10,43 @@ const ExtrasModal = ({ isOpen, onClose, onAddExtra }) => {
 
   useEffect(() => {
     if (isOpen) {
-      // Cargar productos desde localStorage
-      const savedProducts = localStorage.getItem('adminProducts');
-      if (savedProducts) {
-        const products = JSON.parse(savedProducts);
-        
-        // Filtrar por categoría y disponibilidad
-        const bebidas = products
-          .filter(p => p.disponible && p.categoria === 'bebidas')
-          .map(p => ({
-            id: `extra-${p.id}`,
-            nombre: p.nombre,
-            precio: p.precio,
-            // Mantener la imagen que ya tiene o usar una por defecto
-            imagen: p.imagen || '/images/menu/coca-cola.jpg'
-          }));
+      // Cargar productos desde el backend
+      fetch('http://localhost:8080/api/productos')
+        .then(response => response.json())
+        .then(products => {
+          // Filtrar por categoría y disponibilidad
+          const bebidas = products
+            .filter(p => p.disponible && p.categoria === 'bebidas')
+            .map(p => ({
+              id: `extra-${p.id}`,
+              nombre: p.nombre,
+              precio: p.precio,
+              imagen: p.imagen || '/images/menu/coca-cola.jpg'
+            }));
 
-        const adicionales = products
-          .filter(p => p.disponible && p.categoria === 'adicionales')
-          .map(p => ({
-            id: `extra-${p.id}`,
-            nombre: p.nombre,
-            precio: p.precio,
-            // Mantener la imagen que ya tiene o usar una por defecto
-            imagen: p.imagen || '/images/menu/papas.jpg'
-          }));
+          const adicionales = products
+            .filter(p => p.disponible && p.categoria === 'adicionales')
+            .map(p => ({
+              id: `extra-${p.id}`,
+              nombre: p.nombre,
+              precio: p.precio,
+              imagen: p.imagen || '/images/menu/papas.jpg'
+            }));
 
-        const cremas = products
-          .filter(p => p.disponible && p.categoria === 'cremas')
-          .map(p => ({
-            id: `extra-${p.id}`,
-            nombre: p.nombre,
-            precio: p.precio,
-            // Mantener la imagen que ya tiene o usar una por defecto
-            imagen: p.imagen || '/images/menu/mayonesa.jpg'
-          }));
+          const cremas = products
+            .filter(p => p.disponible && p.categoria === 'cremas')
+            .map(p => ({
+              id: `extra-${p.id}`,
+              nombre: p.nombre,
+              precio: p.precio,
+              imagen: p.imagen || '/images/menu/mayonesa.jpg'
+            }));
 
-        setExtras({ bebidas, adicionales, cremas });
-      }
+          setExtras({ bebidas, adicionales, cremas });
+        })
+        .catch(error => {
+          console.error('Error al cargar extras:', error);
+        });
     }
   }, [isOpen]);
 
